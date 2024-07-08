@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,11 +49,21 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   router.go('/register');
                 },
-                child: Icon(
-                  Icons.book,
-                  size: 150,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/register.png',
+                      width: 150,
+                      height: 150,
+                    ),
+                    Text(
+                      textAlign: TextAlign.start,
+                      "Register",
+                      style: GoogleFonts.kaiseiTokumin(fontSize: 20),
+                    ),
+                  ],
                 ),
-              )
+              ),
             ]),
           ],
         ),

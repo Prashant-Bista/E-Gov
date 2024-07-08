@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:egov/components.dart';
+import 'package:egov/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,8 +11,21 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
+              actionsIconTheme: IconThemeData(
+                applyTextScaling: true,
+                size: 40,
+              ),
+              actions: [
+                IconButton(
+                    alignment: Alignment.topRight,
+                    onPressed: () {
+                      router.go('/');
+                    },
+                    icon: Icon(Icons.keyboard_return))
+              ],
               surfaceTintColor: Colors.blue,
               centerTitle: true,
               foregroundColor: Colors.black,
