@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:egov/components.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,11 +12,13 @@ class Register extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            elevation: 20,
-            shadowColor: Colors.grey,
-            backgroundColor: Colors.greenAccent,
-            title: Center(child: Text("Register")),
-          ),
+              surfaceTintColor: Colors.blue,
+              centerTitle: true,
+              foregroundColor: Colors.black,
+              elevation: 20,
+              shadowColor: Colors.grey,
+              backgroundColor: Colors.greenAccent,
+              title: Text("Register")),
           backgroundColor: Colors.white,
           body: Wrap(
             runSpacing: 10,
@@ -22,66 +27,37 @@ class Register extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "First Name",
-                    style:
-                        GoogleFonts.roboto(fontSize: 20, color: Colors.black),
-                  ),
-                  SizedBox(width: 50),
-                  SizedBox(
-                    width: 500,
-                    child: TextFormField(
-                      maxLength: 20,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(5))),
-                          hintText: "Enter your Full name",
-                          hintStyle: TextStyle(fontSize: 12),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.green,
-                                  style: BorderStyle.solid),
-                              borderRadius:
-                                  BorderRadius.all((Radius.circular(5))))),
-                    ),
-                  ),
-                ],
+              ForRegister(
+                heading: "Full Name",
+                hint: "Enter Full Name",
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "First Name",
-                    style:
-                        GoogleFonts.roboto(fontSize: 20, color: Colors.black),
-                  ),
-                  SizedBox(
-                    width: 50,
-                  ),
-                  SizedBox(
-                    width: 500,
-                    child: TextFormField(
-                      maxLength: 20,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.green, style: BorderStyle.solid),
-                            borderRadius:
-                                BorderRadius.all((Radius.circular(5)))),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        hintText: "Enter your Full name",
-                        hintStyle: TextStyle(fontSize: 12),
-                      ),
-                    ),
-                  ),
-                ],
+              ForRegister(
+                heading: "Address",
+                hint: "Enter your Permanent Address",
+              ),
+              ForRegister(
+                heading: "Contact",
+                hint: "Enter Contact number",
+              ),
+              ForRegister(
+                heading: " Citizenship",
+                hint: "Enter Citizenship number",
+              ),
+              ForRegister(heading: "Age", hint: "Enter your Age"),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                width: 350,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Submit",
+                  style: GoogleFonts.abyssinicaSil(
+                      color: Colors.red, fontSize: 20),
+                ),
+                iconAlignment: IconAlignment.end,
               )
             ],
           )),
