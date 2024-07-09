@@ -1,3 +1,4 @@
+import 'package:egov/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,7 +20,7 @@ class Home extends StatelessWidget {
           shadowColor: Colors.grey,
           title: Center(
             child: Text(
-              "Nepal Government E-services",
+              "Smart Nagarpalika",
               style: GoogleFonts.roboto(
                 color: Colors.black,
                 fontSize: 32,
@@ -44,26 +45,17 @@ class Home extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-            Wrap(children: [
-              MaterialButton(
-                onPressed: () {
-                  router.go('/register');
-                },
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/register.png',
-                      width: 150,
-                      height: 150,
-                    ),
-                    Text(
-                      textAlign: TextAlign.start,
-                      "Register",
-                      style: GoogleFonts.kaiseiTokumin(fontSize: 20),
-                    ),
-                  ],
-                ),
+            Wrap(spacing: 50, children: [
+              HomeIcons(
+                path: '/birth',
+                imagePath: 'assets/baby.png',
+                iconName: 'Birth Certificate Registration',
               ),
+              HomeIcons(
+                path: '/death',
+                imagePath: 'assets/death.png',
+                iconName: 'death Certificate Registration',
+              )
             ]),
           ],
         ),
