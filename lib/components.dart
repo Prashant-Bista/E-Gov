@@ -21,38 +21,45 @@ class ForRegister extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.spaceAround,
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          heading,
-          style: GoogleFonts.roboto(fontSize: 15, color: Colors.black),
-        ),
-        SizedBox(width: 20),
-        SizedBox(
-          width: devicewidth/2.5,
-          child: TextFormField(
-            controller: _emailController,
-            maxLength: 20,
-            decoration: InputDecoration(
-                label: Text(heading),
-                focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Colors.red,
-                )),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(5))),
-                hintText: hint,
-                hintStyle: TextStyle(fontSize: 12),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Colors.green, style: BorderStyle.solid),
-                    borderRadius: BorderRadius.all((Radius.circular(5))))),
-            validator: (text) {
-              if (text.toString().length == 0) {
-                return "Please Fill up this space";
-              }
-            },
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-          ),
+        Row(
+          children: [
+            SizedBox(
+              width: 300,
+              child: Text(
+                heading,
+                style: GoogleFonts.roboto(fontSize: 15, color: Colors.black),
+              ),
+            ),
+
+            SizedBox(
+              width: devicewidth/2.5,
+              child: TextFormField(
+                controller: _emailController,
+                maxLength: 20,
+                decoration: InputDecoration(
+                    label: Text(heading),
+                    focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                      color: Colors.red,
+                    )),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    hintText: hint,
+                    hintStyle: TextStyle(fontSize: 12),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.green, style: BorderStyle.solid),
+                        borderRadius: BorderRadius.all((Radius.circular(5))))),
+                validator: (text) {
+                  if (text.toString().length == 0) {
+                    return "Please Fill up this space";
+                  }
+                },
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+              ),
+            ),
+          ],
         ),
       ],
     );

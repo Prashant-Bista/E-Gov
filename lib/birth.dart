@@ -34,7 +34,7 @@ class Birth extends StatelessWidget {
               backgroundColor: Colors.greenAccent,
               title: Text("Birth Certificate Registration")),
           backgroundColor: Colors.white,
-          body: ListView(children: [
+          body: SingleChildScrollView(child:Column(children: [
             SizedBox(
               height: 20,
             ),
@@ -93,18 +93,30 @@ class Birth extends StatelessWidget {
             SizedBox(
               width: 350,
             ),
-            ElevatedButton(
+            MaterialButton(
+              padding: EdgeInsets.zero,
               onPressed: () {
                 router.go('/success');
               },
-              child: Text(
-                "Submit",
-                style:
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  gradient: RadialGradient(
+                      colors: [Colors.lightBlueAccent,Colors.blueAccent],
+                      radius: 2
+                  ),
+                ),
+                width: 200,
+                child: Center(
+                  child: Text(
+                    "Submit",
+                    style:
                     GoogleFonts.abyssinicaSil(color: Colors.red, fontSize: 20),
+                  ),
+                ),
               ),
-              iconAlignment: IconAlignment.start,
             ),
           ])),
-    );
+      ));
   }
 }

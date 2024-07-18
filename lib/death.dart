@@ -34,7 +34,8 @@ class Death extends StatelessWidget {
               backgroundColor: Colors.greenAccent,
               title: Text("Death Certificate Registration")),
           backgroundColor: Colors.white,
-          body: ListView(children: [
+          body: SingleChildScrollView(child: Column(
+          children:[
             SizedBox(
               height: 20,
             ),
@@ -85,16 +86,31 @@ class Death extends StatelessWidget {
             SizedBox(
               width: 350,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Submit",
-                style:
+            MaterialButton(
+padding: EdgeInsets.zero,
+              onPressed: () {
+                router.go('/success');
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  gradient: RadialGradient(
+                    colors: [Colors.lightBlueAccent,Colors.blueAccent],
+                    radius: 2
+                  ),
+                ),
+                width: 200,
+                child: Center(
+                  child: Text(
+                    "Submit",
+                    style:
                     GoogleFonts.abyssinicaSil(color: Colors.red, fontSize: 20),
+                  ),
+                ),
               ),
-              iconAlignment: IconAlignment.start,
             ),
-          ])),
-    );
+          ]),
+      ),
+      ) );
   }
 }

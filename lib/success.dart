@@ -52,6 +52,7 @@ class Success extends StatelessWidget {
                   MaterialButton(onPressed:() {
                     router.go('/');
                   },
+                    padding: EdgeInsets.zero,
                     child: Container(
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
