@@ -5,14 +5,12 @@ import 'package:egov/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Birth extends StatelessWidget {
-  const Birth({super.key});
+class Death extends StatelessWidget {
+  const Death({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
               actionsIconTheme: IconThemeData(
                 applyTextScaling: true,
@@ -32,14 +30,15 @@ class Birth extends StatelessWidget {
               elevation: 20,
               shadowColor: Colors.grey,
               backgroundColor: Colors.greenAccent,
-              title: Text("Birth Certificate Registration")),
+              title: Text("Death Certificate Registration")),
           backgroundColor: Colors.white,
-          body: SingleChildScrollView(child:Column(children: [
+          body: SingleChildScrollView(child: Column(
+          children:[
             SizedBox(
               height: 20,
             ),
             Text(
-              "Child's Information",
+              "Deceased Person's Information",
               style: GoogleFonts.kaiseiTokumin(fontSize: 32),
             ),
             ForRegister(
@@ -47,54 +46,43 @@ class Birth extends StatelessWidget {
               hint: "Enter Full Name",
             ),
             ForRegister(
+              heading: "Place of death",
+              hint: "Enter the deceased's place of death",
+            ),
+            ForRegister(
+              heading: "DOD(YYYY/MM/DD)",
+              hint: "Enter deceased's Date of death",
+            ),
+            ForRegister(
               heading: "Place of birth",
-              hint: "Enter the child's place of birth",
+              hint: "Enter the deceased's place of birth",
             ),
             ForRegister(
               heading: "DOB(YYYY/MM/DD)",
-              hint: "Enter child's Date of Birth",
-            ),
-            Text(
-              "Parent's Information",
-              style: GoogleFonts.kaiseiTokumin(fontSize: 32),
+              hint: "Enter deceased's Date of Birth",
             ),
             ForRegister(
-              heading: "Father's Name",
-              hint: "Enter the father's name",
-            ),
-            ForRegister(
-              heading: "Mother's Name",
-              hint: "Enter the mother's name",
-            ),
-            ForRegister(
-              heading: "Father's DOB(YYYY/MM/DD)",
-              hint: "Enter the father's Date of Birth",
-            ),
-            ForRegister(
-              heading: "Mother's DOB(YYYY/MM/DD)",
-              hint: "Enter the Mother's Date of Birth",
-            ),
-            ForRegister(
-              heading: "Father's Name",
-              hint: "Enter the father's name",
+              heading: "Citizenship number",
+              hint: "Enter the deceased's Citizenship number",
             ),
             ForRegister(
               heading: "Marital Status(Married/Unmarried)",
               hint: "Enter the parents' marital Status",
             ),
             ForRegister(
-              heading: "Father's Occupation",
-              hint: "Enter the Father's Occupation",
+              heading: "Deceased's Occupation",
+              hint: "Enter the Deceased's Occupation",
             ),
             ForRegister(
-              heading: "Mother's Occupation",
-              hint: "Enter the Mother's Occupation",
+              heading: "Cause of Death",
+              hint: "Enter the Deceased's Cause of Death",
             ),
+
             SizedBox(
               width: 350,
             ),
             MaterialButton(
-              padding: EdgeInsets.zero,
+padding: EdgeInsets.zero,
               onPressed: () {
                 router.go('/success');
               },
@@ -102,8 +90,8 @@ class Birth extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gradient: RadialGradient(
-                      colors: [Colors.lightBlueAccent,Colors.blueAccent],
-                      radius: 2
+                    colors: [Colors.lightBlueAccent,Colors.blueAccent],
+                    radius: 2
                   ),
                 ),
                 width: 200,
@@ -116,7 +104,8 @@ class Birth extends StatelessWidget {
                 ),
               ),
             ),
-          ])),
-      ));
+          ]),
+      ),
+      );
   }
 }

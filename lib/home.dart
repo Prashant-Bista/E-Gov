@@ -12,54 +12,67 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.greenAccent,
-          elevation: 35,
-          shadowColor: Colors.grey,
-          title: Center(
-            child: Text(
-              "Smart Nagarpalika",
-              style: GoogleFonts.roboto(
-                color: Colors.black,
-                fontSize: 32,
+          appBar: AppBar(
+            backgroundColor: Colors.greenAccent,
+            elevation: 35,
+            shadowColor: Colors.grey,
+            title: Center(
+              child: Text(
+                "Smart Nagarpalika",
+                style: GoogleFonts.roboto(
+                  color: Colors.black,
+                  fontSize: 32,
+                ),
               ),
             ),
           ),
-        ),
-        body: Wrap(
-          spacing: 10,
-          runSpacing: 10,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  "assets/logo.png",
-                  height: 200,
-                  width: 200,
-                ),
-              ],
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Wrap(spacing: 50, children: [
-              HomeIcons(
-                path: '/birth',
-                imagePath: 'assets/baby.png',
-                iconName: 'Birth Certificate Registration',
+
+          body: Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 50,
+            runSpacing: 50,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/logo.png",
+                    height: 200,
+                    width: 200,
+                  ),
+                ],
               ),
-              HomeIcons(
-                path: '/death',
-                imagePath: 'assets/death.png',
-                iconName: 'death Certificate Registration',
+              SizedBox(
+                width: 30,
               ),
-            ]),
-          ],
+              Wrap(
+                runAlignment: WrapAlignment.center,
+                  spacing: 70,
+                  runSpacing: 70,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    HomeIcons(
+                      path: '/birth',
+                      imagePath: 'assets/baby.png',
+                      iconName: 'Birth Certificate Registration',
+                    ),
+                    HomeIcons(
+                      path: '/death',
+                      imagePath: 'assets/death.png',
+                      iconName: 'death Certificate Registration',
+                    ),
+                    HomeIcons(
+                      path: '/alerthome',
+                      imagePath: 'assets/Emergency_home.png',
+                      iconName: 'Emergency Alert',
+                    ),
+                  ]),
+            ],
+          ),
         ),
-      ),
+      debugShowCheckedModeBanner: false,
+
     );
   }
 }

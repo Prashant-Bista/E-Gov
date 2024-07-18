@@ -1,6 +1,7 @@
-import 'package:egov/death.dart';
+import 'package:egov/emergency_response/emergency_home.dart';
+import 'package:egov/registration/death.dart';
 import 'package:egov/home.dart';
-import 'package:egov/birth.dart';
+import 'package:egov/registration/birth.dart';
 import 'package:egov/success.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,4 +26,5 @@ GoRouter router = GoRouter(routes: [
   GoRoute(path: '/birth', builder: (context, state) => Birth()),
   GoRoute(path: '/death', builder: (context, state) => Death()),
   GoRoute(path: '/success', builder: (context, state) => Success()),
+  GoRoute(path: '/alerthome', builder: (context, state) => EmergencyHome()),
 ]);

@@ -5,14 +5,12 @@ import 'package:egov/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Death extends StatelessWidget {
-  const Death({super.key});
+class Birth extends StatelessWidget {
+  const Birth({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
               actionsIconTheme: IconThemeData(
                 applyTextScaling: true,
@@ -32,62 +30,63 @@ class Death extends StatelessWidget {
               elevation: 20,
               shadowColor: Colors.grey,
               backgroundColor: Colors.greenAccent,
-              title: Text("Death Certificate Registration")),
+              title: Text("Birth Certificate Registration")),
           backgroundColor: Colors.white,
-          body: SingleChildScrollView(child: Column(
-          children:[
-            SizedBox(
-              height: 20,
-            ),
+          body: SingleChildScrollView(child:Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+
             Text(
-              "Deceased Person's Information",
-              style: GoogleFonts.kaiseiTokumin(fontSize: 32),
+              "Child's Information",
+              style: GoogleFonts.kaiseiTokumin(fontSize: 16),
             ),
             ForRegister(
               heading: "Full Name",
               hint: "Enter Full Name",
             ),
             ForRegister(
-              heading: "Place of death",
-              hint: "Enter the deceased's place of death",
-            ),
-            ForRegister(
-              heading: "DOD(YYYY/MM/DD)",
-              hint: "Enter deceased's Date of death",
-            ),
-            ForRegister(
               heading: "Place of birth",
-              hint: "Enter the deceased's place of birth",
+              hint: "Enter the child's place of birth",
             ),
             ForRegister(
               heading: "DOB(YYYY/MM/DD)",
-              hint: "Enter deceased's Date of Birth",
+              hint: "Enter child's Date of Birth",
+            ),
+            Text(
+              "Parent's Information",
+              style: GoogleFonts.kaiseiTokumin(fontSize: 16,),
             ),
             ForRegister(
-              heading: "Citizenship number",
-              hint: "Enter the deceased's Citizenship number",
+              heading: "Father's Name",
+              hint: "Enter the father's name",
             ),
             ForRegister(
-              heading: "Marital Status(Married/Unmarried)",
-              hint: "Enter the parents' marital Status",
+              heading: "Mother's Name",
+              hint: "Enter the mother's name",
             ),
             ForRegister(
-              heading: "Deceased's Occupation",
-              hint: "Enter the Deceased's Occupation",
+              heading: "Father's DOB(YYYY/MM/DD)",
+              hint: "Enter the father's Date of Birth",
             ),
             ForRegister(
-              heading: "Cause of Death",
-              hint: "Enter the Deceased's Cause of Death",
+              heading: "Mother's DOB(YYYY/MM/DD)",
+              hint: "Enter the Mother's Date of Birth",
             ),
             ForRegister(
-              heading: "Duration of illness(if any)",
-              hint: "Enter the Deceased's duration of illness",
+              heading: "Father's Name",
+              hint: "Enter the father's name",
             ),
+
+            ForRegister(
+              heading: "Father's Occupation",
+              hint: "Enter the Father's Occupation",
+            ),
+
             SizedBox(
               width: 350,
             ),
             MaterialButton(
-padding: EdgeInsets.zero,
+              padding: EdgeInsets.zero,
               onPressed: () {
                 router.go('/success');
               },
@@ -95,8 +94,8 @@ padding: EdgeInsets.zero,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   gradient: RadialGradient(
-                    colors: [Colors.lightBlueAccent,Colors.blueAccent],
-                    radius: 2
+                      colors: [Colors.lightBlueAccent,Colors.blueAccent],
+                      radius: 2
                   ),
                 ),
                 width: 200,
@@ -109,8 +108,7 @@ padding: EdgeInsets.zero,
                 ),
               ),
             ),
-          ]),
-      ),
-      ) );
+          ])),
+      );
   }
 }
