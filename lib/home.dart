@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                 path: '/death',
                 imagePath: 'assets/death.png',
                 iconName: 'death Certificate Registration',
-              )
+              ),
             ]),
           ],
         ),

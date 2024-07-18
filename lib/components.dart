@@ -14,17 +14,20 @@ class ForRegister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    double devicewidth =MediaQuery.of(context).size.width;
+    return Wrap(
+      spacing: 20,
+      runSpacing: 20,
+      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+      // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           heading,
-          style: GoogleFonts.roboto(fontSize: 20, color: Colors.black),
+          style: GoogleFonts.roboto(fontSize: 15, color: Colors.black),
         ),
-        SizedBox(width: 50),
+        SizedBox(width: 20),
         SizedBox(
-          width: 500,
+          width: devicewidth/2.5,
           child: TextFormField(
             controller: _emailController,
             maxLength: 20,

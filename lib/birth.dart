@@ -94,7 +94,9 @@ class Birth extends StatelessWidget {
               width: 350,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                router.go('/success');
+              },
               child: Text(
                 "Submit",
                 style:
